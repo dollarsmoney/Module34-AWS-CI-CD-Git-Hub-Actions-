@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib/core';
-import { AwsCiCdStack } from '../lib/aws ci-cd-stack';
+import { AwsCiCdStack } from '../lib/awscicd-stack';
 
 const app = new cdk.App();
 new AwsCiCdStack(app, 'AwsCiCdStack', {
