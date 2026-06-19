@@ -1,76 +1,76 @@
-# 🚀 Module 34 – AWS CI/CD with GitHub Actions
+<div align="center">
+  <h1>🚀 Module 34 – AWS CI/CD Infrastructure</h1>
+  <h3>Cloud-Native Infrastructure as Code with AWS CDK & GitHub Actions</h3>
+  <p><strong>Built with ❤️ by Itoje Dollars</strong></p>
 
-Welcome to this AWS CDK TypeScript project!  
-This project demonstrates infrastructure deployment and CI/CD automation using AWS CDK and GitHub Actions.
+  <p>
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+    <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+    <img src="https://img.shields.io/badge/AWS_CDK-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+    <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+  </p>
+</div>
 
 ---
 
-## 📦 Project Overview
+## 📖 Overview
 
-This is a blank AWS CDK project initialized with TypeScript.  
-The `cdk.json` file tells the CDK Toolkit how to execute your application.
+This project demonstrates a **production-style CI/CD pipeline** using AWS CDK and GitHub Actions.  
+It automates infrastructure deployment on AWS using Infrastructure as Code (IaC) principles.
 
-You can use this project as a foundation for building and deploying AWS infrastructure using Infrastructure as Code (IaC).
+The goal is to build a **repeatable, scalable, and cloud-native deployment workflow**.
 
 ---
 
-## 🛠️ Prerequisites
+## 🧠 Tech Stack
 
-Before you begin, make sure you have:
+- Programming Languages: TypeScript, JavaScript  
+- Cloud Provider: Amazon Web Services (AWS)  
+- Infrastructure as Code: AWS CDK  
+- CI/CD: GitHub Actions  
+- Runtime: Node.js  
 
-- Node.js installed
-- AWS CLI configured
-- AWS CDK installed globally  
-  ```bash
-  npm install -g aws-cdk
-⚙️ Setup
+---
 
-Install dependencies:
+## ☁️ Cloud Architecture
 
-npm install
+```mermaid
+graph TD;
+    Dev[Developer] --> GitHub[GitHub Repository]
+
+    GitHub --> Actions[GitHub Actions CI/CD Pipeline]
+
+    Actions --> Build[Build & Test Stage]
+    Actions --> Deploy[CDK Deploy Stage]
+
+    Deploy --> AWS[AWS Cloud]
+
+    AWS --> CF[CloudFormation]
+    CF --> Stack[CDK Stack Resources]
+
+    Stack --> S3[S3 Buckets / Lambda / IAM / VPC (as defined)]
+⚙️ CDK Workflow
+Developer pushes code to GitHub
+GitHub Actions triggers pipeline
+Code is built and tested
+AWS CDK synthesizes CloudFormation template
+Stack is deployed to AWS automatically
 🚀 Useful Commands
-🔨 Build the project
-npm run build
-
-Compiles TypeScript into JavaScript.
-
-👀 Watch for changes
-npm run watch
-
-Automatically recompiles on file changes.
-
-🧪 Run tests
-npm run test
-
-Runs unit tests using Jest.
-
-☁️ Deploy stack
-npx cdk deploy
-
-Deploys the stack to your AWS account and region.
-
-🔍 Compare changes
-npx cdk diff
-
-Shows differences between deployed stack and current code.
-
-📄 Generate CloudFormation template
-npx cdk synth
-
-Synthesizes the CloudFormation template from your CDK app.
-
-🔄 CI/CD
-
-This project is designed to integrate with GitHub Actions for automated deployment pipelines to AWS.
-
-📁 Project Structure
-.
-├── bin/              # CDK app entry point
-├── lib/              # Stack definitions
-├── test/             # Unit tests
-├── cdk.json          # CDK configuration
-├── package.json      # Dependencies and scripts
-└── tsconfig.json     # TypeScript configuration
+npm install        # Install dependencies
+npm run build      # Compile TypeScript
+npm run test       # Run unit tests
+npx cdk synth      # Generate CloudFormation
+npx cdk deploy     # Deploy to AWS
+npx cdk diff       # Compare changes
+🔐 Key Features
+Infrastructure as Code (IaC)
+Fully automated CI/CD pipeline
+AWS-native deployment (CloudFormation under the hood)
+Scalable cloud architecture
+Version-controlled infrastructure
 🧠 Author
 
-Built as part of AWS CI/CD learning module using AWS CDK + GitHub Actions.
+Itoje Dollars
+Cloud & DevOps Enthusiast | Software Developer
